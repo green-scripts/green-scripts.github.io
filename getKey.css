@@ -1,0 +1,330 @@
+/* ── Layout ── */
+.key-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ── Botão voltar ── */
+.btn-voltar {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  color: rgba(34, 255, 102, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.btn-voltar:hover {
+  color: #22ff66;
+}
+
+/* ── Cabeçalho ── */
+.key-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ── Card ── */
+.key-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(10,18,10,0.95) 0%, rgba(5,10,5,0.98) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(34, 255, 102, 0.12);
+  width: 100%;
+  overflow: hidden;
+}
+
+.key-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ── Título ── */
+.key-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.key-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.key-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(34, 255, 102, 0.45);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* ── Timer ── */
+.timer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.timer-ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.ring-svg {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: rgba(34, 255, 102, 0.08);
+  stroke-width: 5;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: #22ff66;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 213.6;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 4px rgba(34,255,102,0.5));
+}
+
+.timer-number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #22ff66;
+}
+
+.timer-desc {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(180, 200, 180, 0.5);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.timer-desc strong {
+  color: rgba(34, 255, 102, 0.7);
+}
+
+/* ── Barra de progresso ── */
+.progress-bar-wrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(34, 255, 102, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22ff66, #00cc44);
+  border-radius: 100px;
+  transition: width 1s linear;
+  box-shadow: 0 0 8px rgba(34, 255, 102, 0.4);
+}
+
+.progress-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(34, 255, 102, 0.35);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ── Botão gerar ── */
+.btn-gerar {
+  position: relative;
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: #22ff66;
+  border: 1px solid rgba(34, 255, 102, 0.3);
+  border-radius: 14px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.4;
+}
+
+.btn-gerar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 255, 102, 0);
+  transition: background 0.3s ease;
+  border-radius: inherit;
+}
+
+.btn-gerar:not(:disabled) {
+  cursor: pointer;
+  opacity: 1;
+  border-color: rgba(34, 255, 102, 0.5);
+  animation: pulseBtn 2s ease-in-out infinite;
+}
+
+.btn-gerar:not(:disabled):hover {
+  color: #050505;
+  border-color: #22ff66;
+  box-shadow: 0 0 30px rgba(34, 255, 102, 0.35);
+}
+
+.btn-gerar:not(:disabled):hover::before {
+  background: #22ff66;
+}
+
+.btn-gerar:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.btn-gerar .btn-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes pulseBtn {
+  0%, 100% { box-shadow: 0 0 0px rgba(34, 255, 102, 0); }
+  50%       { box-shadow: 0 0 20px rgba(34, 255, 102, 0.2); }
+}
+
+/* ── Resultado da key ── */
+.key-result {
+  display: none;
+  flex-direction: column;
+  gap: 0.7rem;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.key-result.visivel {
+  display: flex;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.key-result-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(34, 255, 102, 0.5);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.key-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(34, 255, 102, 0.05);
+  border: 1px solid rgba(34, 255, 102, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  gap: 1rem;
+}
+
+.key-value {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #22ff66;
+  letter-spacing: 0.15em;
+  word-break: break-all;
+}
+
+.btn-copiar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid rgba(34, 255, 102, 0.3);
+  border-radius: 8px;
+  color: rgba(34, 255, 102, 0.7);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+}
+
+.btn-copiar:hover {
+  background: rgba(34, 255, 102, 0.1);
+  color: #22ff66;
+  border-color: rgba(34, 255, 102, 0.5);
+}
+
+.btn-copiar.copiado {
+  color: #fff;
+  background: rgba(34, 255, 102, 0.2);
+  border-color: #22ff66;
+}
+
+.key-aviso {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 200, 80, 0.5);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  body {
+    justify-content: flex-start;
+    padding-top: 4rem;
+  }
+
+  .key-card-inner {
+    padding: 1.4rem 1.4rem 1.6rem;
+  }
+
+  .key-title {
+    font-size: 1.2rem;
+  }
+}

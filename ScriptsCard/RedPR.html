@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenScripts HUB — Redação 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="RedPR.css">
+</head>
+<body>
+
+  <div class="bg-glow-bl"></div>
+  <div class="bg-glow-tr"></div>
+
+  <div class="detalhe-wrapper">
+
+    <!-- Cabeçalho -->
+    <div class="detalhe-header">
+      <a href="../scripts.html" class="btn-voltar">← Voltar</a>
+      <div class="logo-text"><span>Green</span>Scripts <span class="logo-hub">HUB</span></div>
+    </div>
+
+    <!-- Hero do script -->
+    <div class="script-hero">
+      <div class="card-top-bar"></div>
+      <div class="glow-dot"></div>
+      <div class="script-hero-inner">
+        <div class="script-hero-left">
+          <div class="script-hero-img-wrap">
+            <img src="../Imagens/RedaçãoParanaIcon.png" alt="Redação 1" class="script-hero-img">
+          </div>
+          <div>
+            <div class="script-hero-tags">
+              <span class="script-tag">v1.0</span>
+              <span class="script-tag tag-ativo">● Ativo</span>
+              <span class="card-badge">Grátis</span>
+            </div>
+            <h1 class="script-hero-title">Redação Paraná</h1>
+            <p class="script-hero-desc">Script para redações com colagem automática, contador de palavras e diversas ferramentas para facilitar sua escrita.</p>
+          </div>
+        </div>
+
+        <!-- Caixa de cópia do link -->
+        <div class="copy-box">
+          <div class="copy-box-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            Link do Bookmarklet
+          </div>
+          <div class="copy-row">
+            <div class="copy-input" id="copyInput">javascript:(function(){/* link do script aqui */})();</div>
+            <button class="btn-copiar" id="btnCopiar" onclick="copiarLink()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Copiar
+            </button>
+          </div>
+          <p class="copy-hint">Cole esse link como URL de um favorito no seu navegador.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tutorial -->
+    <div class="tutorial-section">
+
+      <h2 class="tutorial-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#22ff66" stroke-width="1.8"/>
+          <path d="M12 8v4M12 16h.01" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Como instalar e usar
+      </h2>
+
+      <!-- Passo 1 -->
+      <div class="passo">
+        <div class="passo-num">01</div>
+        <div class="passo-body">
+          <h3 class="passo-titulo">Copie o link do bookmarklet</h3>
+          <p class="passo-desc">Clique no botão <strong>Copiar</strong> acima para copiar o link do script para a sua área de transferência.</p>
+        </div>
+      </div>
+
+      <!-- Passo 2 -->
+      <div class="passo">
+        <div class="passo-num">02</div>
+        <div class="passo-body">
+          <h3 class="passo-titulo">Exiba a barra de favoritos</h3>
+          <p class="passo-desc">No seu navegador, ative a barra de favoritos com o atalho abaixo:</p>
+          <div class="atalhos">
+            <div class="atalho-item">
+              <span class="atalho-os">Chrome / Edge</span>
+              <div class="atalho-keys">
+                <kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>B</kbd>
+              </div>
+            </div>
+            <div class="atalho-item">
+              <span class="atalho-os">Firefox</span>
+              <div class="atalho-keys">
+                <kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>B</kbd>
+              </div>
+            </div>
+            <div class="atalho-item">
+              <span class="atalho-os">Safari (Mac)</span>
+              <div class="atalho-keys">
+                <kbd>⌘</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>B</kbd>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passo 3 -->
+      <div class="passo">
+        <div class="passo-num">03</div>
+        <div class="passo-body">
+          <h3 class="passo-titulo">Adicione o favorito manualmente</h3>
+          <p class="passo-desc">Clique com o botão direito na barra de favoritos e selecione <strong>Adicionar página</strong> ou <strong>Novo favorito</strong>.</p>
+          <div class="info-box">
+            <div class="info-box-row">
+              <span class="info-key">Nome</span>
+              <span class="info-val">Redação 1</span>
+            </div>
+            <hr class="info-divider">
+            <div class="info-box-row">
+              <span class="info-key">URL</span>
+              <span class="info-val info-val-code">Cole o link copiado aqui</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passo 4 -->
+      <div class="passo">
+        <div class="passo-num">04</div>
+        <div class="passo-body">
+          <h3 class="passo-titulo">Acesse o site e execute o script</h3>
+          <p class="passo-desc">Entre na plataforma de redação, clique no favorito <strong>Redação 1</strong> na barra de favoritos e o script será carregado automaticamente.</p>
+          <div class="aviso-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0; margin-top:1px;">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="rgba(255,200,80,0.8)" stroke-width="1.8"/>
+              <path d="M12 9v4M12 17h.01" stroke="rgba(255,200,80,0.8)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            O script só funciona na página correta. Certifique-se de estar na plataforma antes de executar.
+          </div>
+        </div>
+      </div>
+
+      <!-- Passo 5 -->
+      <div class="passo">
+        <div class="passo-num">05</div>
+        <div class="passo-body">
+          <h3 class="passo-titulo">Precisa de uma chave?</h3>
+          <p class="passo-desc">Alguns scripts exigem uma chave de acesso. Pegue a sua gratuitamente:</p>
+          <a href="getKey.html" class="btn-chave">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <circle cx="8.5" cy="11" r="4" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12.5 11H21M19 11v3M16 11v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            Pegar Chave Grátis →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function copiarLink() {
+      const texto = document.getElementById('copyInput').innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        const btn = document.getElementById('btnCopiar');
+        btn.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copiado!`;
+        btn.classList.add('copiado');
+        setTimeout(() => {
+          btn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            Copiar`;
+          btn.classList.remove('copiado');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

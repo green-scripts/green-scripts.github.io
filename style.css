@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(34, 34, 34),black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow-x: hidden; /* era "overflow: hidden" — esse bloqueava o scroll vertical */
+}
+
+.bg-glow-bl {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  bottom: 2%;
+  left: 2%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  box-shadow: 0 0 300px 80px rgba(0, 220, 60, 0.12);
+  pointer-events: none;
+}
+
+.bg-glow-tr {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  top: 10%;
+  right: 5%;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 200px 60px rgba(0, 255, 80, 0.04);
+  pointer-events: none;
+}
+
+/* ── Logo ── */
+.logo-area {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.logo-text span {
+  color: #22ff66;
+}
+
+.logo-hub {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ── Cards wrapper ── */
+.cards-wrapper {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 860px;
+}
+
+/* ── Card base ── */
+.card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(10,18,10,0.95) 0%, rgba(5,10,5,0.98) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(34, 255, 102, 0.12);
+  flex: 1 1 300px;
+  max-width: 390px;
+  min-width: 260px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(34, 255, 102, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34, 255, 102, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(34, 255, 102, 0.08),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(34, 255, 102, 0.08);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ── Top bar ── */
+.card-top-bar {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22ff66 40%, #00cc44 70%, transparent);
+  width: 100%;
+  opacity: 0.6;
+  transition: opacity 0.35s;
+}
+
+.card:hover .card-top-bar {
+  opacity: 1;
+}
+
+/* ── Card inner ── */
+.card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ── Card header ── */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* ── Icon wrap ── */
+.card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(34, 255, 102, 0.08);
+  border: 1px solid rgba(34, 255, 102, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+
+.card-icon-wrap svg {
+  width: 26px;
+  height: 26px;
+}
+
+.card:hover .card-icon-wrap {
+  background: rgba(34, 255, 102, 0.14);
+  border-color: rgba(34, 255, 102, 0.35);
+  box-shadow: 0 0 20px rgba(34, 255, 102, 0.12);
+}
+
+/* ── Divider ── */
+.card-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(34, 255, 102, 0.35) 0%, rgba(34, 255, 102, 0.05) 60%, transparent 100%);
+  margin-bottom: 1.1rem;
+  border: none;
+}
+
+/* ── Description ── */
+.card-desc {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(180, 200, 180, 0.7);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+/* ── Footer ── */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(34, 255, 102, 0.5);
+  background: rgba(34, 255, 102, 0.06);
+  border: 1px solid rgba(34, 255, 102, 0.15);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+/* ── Button ── */
+.access-btn {
+  position: relative;
+  background: transparent;
+  color: #22ff66;
+  border: 1px solid rgba(34, 255, 102, 0.4);
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.access-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 255, 102, 0);
+  transition: background 0.3s ease;
+  border-radius: inherit;
+}
+
+.access-btn:hover {
+  border-color: #22ff66;
+  color: #050505;
+  box-shadow: 0 0 20px rgba(34, 255, 102, 0.3);
+  transform: translateX(2px);
+}
+
+.access-btn:hover::before {
+  background: rgba(34, 255, 102, 1);
+}
+
+.access-btn:active {
+  transform: scale(0.97);
+}
+
+.btn-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.access-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Glow dot ── */
+.glow-dot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card1 .glow-dot {
+  top: 30%;
+  left: 60%;
+  box-shadow: 0 0 60px 18px rgba(34, 255, 102, 0.07);
+}
+
+.card2 .glow-dot {
+  top: 25%;
+  right: 30%;
+  box-shadow: 0 0 60px 18px rgba(34, 255, 102, 0.06);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 600px) {
+  body {
+    justify-content: flex-start;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .card-inner {
+    padding: 1.4rem 1.4rem 1.6rem;
+  }
+}
