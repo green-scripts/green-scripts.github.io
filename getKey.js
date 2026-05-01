@@ -13,13 +13,27 @@ ringFill.style.strokeDasharray  = circunferencia;
 ringFill.style.strokeDashoffset = 0;
 
 let restante = TEMPO;
+let keyIsGenerate = false
 
 //Faz a requisição get para obter o getElementById
-let ID = null;
 
-(async () => {
-  ID = await GetID();
-})();
+
+let ID = getCookie('sessions_id')
+
+if (!ID) {
+  (async () => {
+    ID = await GetID()
+    if (ID) {
+      setCookie('sessions_id', ID, 10)
+
+      setInterval(() => {
+        if (!getCookie('sessions_id') && !keyIsGenerate) location.reload()
+      }, 5000)
+    }
+  })()
+}
+
+
 
 const intervalo = setInterval(() => {
   restante--;
@@ -58,6 +72,12 @@ function liberarBotao() {
 
 async function gerarKey() {
   const key = await GetKey(ID);
+
+  if (!key) return
+
+  deleteCookie("sessions_id");
+  keyIsGenerate = true
+
   document.getElementById('keyValue').textContent = key;
   keyResult.classList.add('visivel');
   btnGerar.disabled = true;
@@ -103,7 +123,6 @@ async function GetID()
     }
 
     const data = await response.json()
-    console.log(data.id)
     return data.id
   } catch (error)
   {
@@ -141,4 +160,21 @@ async function GetKey(id)
     console.log(error)
     return null
   }
+}
+
+
+//COOKIES
+
+function getCookie(name) {
+  return document.cookie.split('; ').find(r => r.startsWith(name + '='))?.split('=')[1] ?? null
+}
+
+function setCookie(name,value,minutes)
+{
+  const expires = new Date(Date.now() + minutes * 60000).toUTCString()
+  document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Strict`
+}
+
+function deleteCookie(name) {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`
 }
