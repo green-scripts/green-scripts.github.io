@@ -18,86 +18,120 @@
     <span>←</span> Voltar
   </a>
 
-  <div class="key-wrapper">
-
-    <!-- Cabeçalho -->
-    <div class="key-header">
-      <div class="logo-text"><span>Green</span>Scripts <span class="logo-hub">HUB</span></div>
+  <!-- Banner topo — só mobile (320×50) -->
+  <div class="banner-wrap banner-mobile-top">
+    <div class="banner banner-320x50">
+      <span class="banner-label">320×50</span>
     </div>
+  </div>
 
-    <!-- Card principal -->
-    <div class="key-card">
-      <div class="card-top-bar"></div>
-      <div class="glow-dot"></div>
+  <!-- Layout: sidebar esquerda | conteúdo | sidebar direita -->
+  <div class="key-page-layout">
 
-      <div class="key-card-inner">
-
-        <!-- Ícone + Título -->
-        <div class="key-title-row">
-          <div class="card-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="8.5" cy="11" r="4" stroke="#22ff66" stroke-width="1.8"/>
-              <path d="M12.5 11H21" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M19 11V14" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M16 11V13" stroke="rgba(34,255,102,0.6)" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h1 class="key-title">Gerar Chave</h1>
-            <p class="key-subtitle">Aguarde para liberar sua chave gratuita</p>
-          </div>
-        </div>
-
-        <hr class="card-divider">
-
-        <!-- Timer -->
-        <div class="timer-section" id="timerSection">
-          <div class="timer-ring">
-            <svg viewBox="0 0 80 80" class="ring-svg">
-              <circle class="ring-bg" cx="40" cy="40" r="34"/>
-              <circle class="ring-fill" cx="40" cy="40" r="34" id="ringFill"/>
-            </svg>
-            <div class="timer-number" id="timerNumber">15</div>
-          </div>
-          <p class="timer-desc">Aguarde <strong id="timerSeg">15</strong> segundo(s) para liberar o botão</p>
-        </div>
-
-        <!-- Barra de progresso -->
-        <div class="progress-bar-wrap">
-          <div class="progress-bar" id="progressBar"></div>
-        </div>
-        <p class="progress-label" id="progressLabel">Verificando acesso...</p>
-
-        <!-- Botão gerar key (desabilitado no início) -->
-        <button class="btn-gerar" id="btnGerar" disabled>
-          <span class="btn-label">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Gerar Key
-          </span>
-        </button>
-
-        <!-- Resultado (oculto até gerar) -->
-        <div class="key-result" id="keyResult">
-          <div class="key-result-label">Sua key:</div>
-          <div class="key-box">
-            <span class="key-value" id="keyValue">12345</span>
-            <button class="btn-copiar" id="btnCopiar" onclick="copiarKey()">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="1.8"/>
-              </svg>
-              Copiar
-            </button>
-          </div>
-          <p class="key-aviso">⚠🕐 essa chave só pode ser usada uma única vez e expira em 30 minutos</p>
-        </div>
-
+    <!-- Sidebar esquerda — desktop (160×600) -->
+    <aside class="key-sidebar key-sidebar-left">
+      <div class="banner banner-160x600">
+        <span class="banner-label">160×600</span>
       </div>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <div class="key-wrapper">
+
+      <!-- Cabeçalho -->
+      <div class="key-header">
+        <div class="logo-text"><span>Green</span>Scripts <span class="logo-hub">HUB</span></div>
+      </div>
+
+      <!-- Card principal -->
+      <div class="key-card">
+        <div class="card-top-bar"></div>
+        <div class="glow-dot"></div>
+
+        <div class="key-card-inner">
+
+          <!-- Ícone + Título -->
+          <div class="key-title-row">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8.5" cy="11" r="4" stroke="#22ff66" stroke-width="1.8"/>
+                <path d="M12.5 11H21" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M19 11V14" stroke="#22ff66" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M16 11V13" stroke="rgba(34,255,102,0.6)" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h1 class="key-title">Gerar Chave</h1>
+              <p class="key-subtitle">Aguarde para liberar sua chave gratuita</p>
+            </div>
+          </div>
+
+          <hr class="card-divider">
+
+          <!-- Timer -->
+          <div class="timer-section" id="timerSection">
+            <div class="timer-ring">
+              <svg viewBox="0 0 80 80" class="ring-svg">
+                <circle class="ring-bg" cx="40" cy="40" r="34"/>
+                <circle class="ring-fill" cx="40" cy="40" r="34" id="ringFill"/>
+              </svg>
+              <div class="timer-number" id="timerNumber">15</div>
+            </div>
+            <p class="timer-desc">Aguarde <strong id="timerSeg">15</strong> segundo(s) para liberar o botão</p>
+          </div>
+
+          <!-- Barra de progresso -->
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <p class="progress-label" id="progressLabel">Verificando acesso...</p>
+
+          <!-- Botão gerar key -->
+          <button class="btn-gerar" id="btnGerar" disabled>
+            <span class="btn-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Gerar Key
+            </span>
+          </button>
+
+          <!-- Resultado -->
+          <div class="key-result" id="keyResult">
+            <div class="key-result-label">Sua key:</div>
+            <div class="key-box">
+              <span class="key-value" id="keyValue">12345</span>
+              <button class="btn-copiar" id="btnCopiar" onclick="copiarKey()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+                Copiar
+              </button>
+            </div>
+            <p class="key-aviso">⚠🕐 essa chave só pode ser usada uma única vez e expira em 30 minutos</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
+    <!-- Sidebar direita — desktop (160×600) -->
+    <aside class="key-sidebar key-sidebar-right">
+      <div class="banner banner-160x600">
+        <span class="banner-label">160×600</span>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Banner rodapé — só mobile (320×50) -->
+  <div class="banner-wrap banner-mobile-bottom">
+    <div class="banner banner-320x50">
+      <span class="banner-label">320×50</span>
+    </div>
   </div>
 
   <script src="getKey.js"></script>
