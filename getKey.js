@@ -1,5 +1,5 @@
 const TEMPO = 15;
-const circunferencia = 2 * Math.PI * 34; // raio 34
+const circunferencia = 2 * Math.PI * 34;
 
 const ringFill    = document.getElementById('ringFill');
 const timerNumber = document.getElementById('timerNumber');
@@ -14,22 +14,25 @@ ringFill.style.strokeDashoffset = 0;
 
 let restante = TEMPO;
 
+//Faz a requisição get para obter o getElementById
+let ID = null;
+
+(async () => {
+  ID = await GetID();
+})();
+
 const intervalo = setInterval(() => {
   restante--;
 
   const progresso = (TEMPO - restante) / TEMPO;
 
-  // Anel SVG
   ringFill.style.strokeDashoffset = circunferencia * progresso;
 
-  // Número
   timerNumber.textContent = restante;
   timerSeg.textContent    = restante;
 
-  // Barra
   progressBar.style.width = (progresso * 100) + '%';
 
-  // Labels de status
   if (progresso < 0.4) {
     progressLabel.textContent = 'Verificando acesso...';
   } else if (progresso < 0.75) {
@@ -53,8 +56,8 @@ function liberarBotao() {
   btnGerar.addEventListener('click', gerarKey);
 }
 
-function gerarKey() {
-  const key = '12345';
+async function gerarKey() {
+  const key = await GetKey(ID);
   document.getElementById('keyValue').textContent = key;
   keyResult.classList.add('visivel');
   btnGerar.disabled = true;
@@ -77,4 +80,65 @@ function copiarKey() {
       btn.classList.remove('copiado');
     }, 2000);
   });
+}
+
+
+async function GetID()
+{
+  const URL = 'https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/GenerateKey'
+  const anomKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0ZGJyYWljb3Rua2hma2V4d3loIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1MDY2MjcsImV4cCI6MjA5MzA4MjYyN30.ftV4X0vN3NRHJhsIyI_z4D0rm8sGPxVtwzhOux1jykA'
+
+  try
+  {
+    const response = await fetch(URL,
+    {
+      method: 'GET',
+      headers: {'Authorization': `Bearer ${anomKey}`, 'Content-Type': 'application/json'}
+    })
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Detalhe do Erro no Banco:', errorData);
+      throw new Error(`Status: ${response.status} - ${errorData.error}`);
+    }
+
+    const data = await response.json()
+    console.log(data.id)
+    return data.id
+  } catch (error)
+  {
+    window.alert("Ocorreu um erro no nosso servidor, tente novamente mais tarde")
+    return null
+  }
+}
+
+
+async function GetKey(id)
+{
+  const URL = 'https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/GenerateKey'
+  const anomKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0ZGJyYWljb3Rua2hma2V4d3loIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1MDY2MjcsImV4cCI6MjA5MzA4MjYyN30.ftV4X0vN3NRHJhsIyI_z4D0rm8sGPxVtwzhOux1jykA'
+
+  try
+  {
+    const response = await fetch(URL,
+    {
+      method: 'POST',
+      headers: {'Authorization': `Bearer ${anomKey}`, 'Content-Type': 'application/json'},
+      body: JSON.stringify({id})
+    })
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Detalhe do Erro no Banco:', errorData);
+      throw new Error(`Status: ${response.status} - ${errorData.error}`);
+    }
+
+    const data = await response.json()
+    return data.key
+  } catch (error)
+  {
+    window.alert("Ocorreu um erro no nosso servidor, tente novamente mais tarde")
+    console.log(error)
+    return null
+  }
 }
