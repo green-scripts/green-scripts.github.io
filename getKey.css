@@ -313,11 +313,103 @@
   text-align: center;
 }
 
+/* ── Banners ── */
+.banner-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 255, 102, 0.03);
+  border: 1px dashed rgba(34, 255, 102, 0.2);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(34,255,102,0.02) 0%, transparent 60%);
+}
+
+.banner-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(34, 255, 102, 0.3);
+  letter-spacing: 0.1em;
+}
+
+.banner-320x50 { width: 320px; height: 50px; }
+.banner-160x600 { width: 160px; height: 600px; }
+
+/* Banners mobile: visíveis só em telas pequenas */
+.banner-mobile-top,
+.banner-mobile-bottom {
+  display: none;
+}
+
+/* ── Layout com sidebars ── */
+.key-page-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Sidebars desktop */
+.key-sidebar {
+  flex-shrink: 0;
+  padding-top: 2rem;
+}
+
+/* ── Layout ── */
+.key-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  flex: 1;
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+}
+
 /* ── Mobile ── */
+@media (max-width: 1100px) {
+  /* Esconde sidebars, mostra banners mobile */
+  .key-sidebar { display: none; }
+  .banner-mobile-top,
+  .banner-mobile-bottom { display: flex; }
+
+  /* Wrapper ocupa largura toda sem sidebars */
+  .key-page-layout {
+    padding: 0;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     justify-content: flex-start;
-    padding-top: 4rem;
+    padding-top: 0;
+  }
+
+  .key-wrapper {
+    padding: 1.5rem 1rem 3rem;
   }
 
   .key-card-inner {
