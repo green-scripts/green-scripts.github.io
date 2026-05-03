@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="getKey.css">
+  <meta name='admaven-placement' content=Bqjs6qHg4>
 </head>
 <body>
 
@@ -18,25 +19,15 @@
     <span>←</span> Voltar
   </a>
 
-  <!-- Banner topo — só mobile (320×50) -->
-  <div class="banner-wrap banner-mobile-top">
-    <div class="banner banner-320x50">
-      <span class="banner-label">320×50</span>
-    </div>
-  </div>
-
-  <!-- Layout: sidebar esquerda | conteúdo | sidebar direita -->
   <div class="key-page-layout">
-
-    <!-- Sidebar esquerda — desktop (160×600) -->
-    <aside class="key-sidebar key-sidebar-left">
-      <div class="banner banner-160x600">
-        <span class="banner-label">160×600</span>
-      </div>
-    </aside>
-
     <!-- Conteúdo principal -->
     <div class="key-wrapper">
+
+      <aside class="key-sidebar key-sidebar-left">
+        <div class="banner banner-728x90">
+          <span class="banner-label">728×90</span>
+        </div>
+      </aside>
 
       <!-- Cabeçalho -->
       <div class="key-header">
@@ -65,7 +56,7 @@
               <p class="key-subtitle">Aguarde para liberar sua chave gratuita</p>
             </div>
           </div>
-
+          
           <hr class="card-divider">
 
           <!-- Timer -->
@@ -79,24 +70,24 @@
             </div>
             <p class="timer-desc">Aguarde <strong id="timerSeg">15</strong> segundo(s) para liberar o botão</p>
           </div>
-
+          
           <!-- Barra de progresso -->
           <div class="progress-bar-wrap">
             <div class="progress-bar" id="progressBar"></div>
           </div>
           <p class="progress-label" id="progressLabel">Verificando acesso...</p>
-
+          
           <!-- Botão gerar key -->
           <button class="btn-gerar" id="btnGerar" disabled>
             <span class="btn-label">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               Gerar Key
             </span>
           </button>
-
+          
           <!-- Resultado -->
           <div class="key-result" id="keyResult">
             <div class="key-result-label">Sua key:</div>
@@ -117,14 +108,6 @@
       </div>
 
     </div>
-
-    <!-- Sidebar direita — desktop (160×600) -->
-    <aside class="key-sidebar key-sidebar-right">
-      <div class="banner banner-160x600">
-        <span class="banner-label">160×600</span>
-      </div>
-    </aside>
-
   </div>
 
   <!-- Banner rodapé — só mobile (320×50) -->
@@ -133,6 +116,7 @@
       <span class="banner-label">320×50</span>
     </div>
   </div>
+
 
   <script src="getKey.js"></script>
 </body>
