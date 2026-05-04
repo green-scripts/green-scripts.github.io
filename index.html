@@ -16,7 +16,27 @@
   <!-- Banner topo — só mobile (320×50) -->
   <div class="banner-wrap banner-mobile-top">
     <div class="banner banner-320x50">
-      <span class="banner-label">320×50</span>
+      <script>
+          if (!isLocal && ADS_ENABLED) {
+
+            // 1. Configuração do anúncio
+            var atOptions = {
+              'key' : '7c2fb76274b9093f4da548e80121d409',
+              'format' : 'iframe',
+              'height' : 50,
+              'width' : 320,
+              'params' : {}
+            };
+
+            // 2. Criação do script
+            var script = document.createElement('script');
+            script.src = "https://www.highperformanceformat.com/7c2fb76274b9093f4da548e80121d409/invoke.js";
+
+            // 3. Inserir DENTRO da div
+            document.getElementById("ad-banner-320x50").appendChild(script);
+          }
+        </script>
+
     </div>
   </div>
 
@@ -92,10 +112,40 @@
   </div>
 
   <div class="banner-wrap banner-bottom">
-    <div class="banner banner-468x60">
-      <span class="banner-label">468×60</span>
+    <div class="banner banner-468x60" id="ad-468x60" style="width:468px; height:60px;">
+
+      <script>
+        const isLocal =
+          window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1";
+
+        const ADS_ENABLED = true;
+
+        if (!isLocal && ADS_ENABLED) {
+
+          // 1. Configuração GLOBAL do anúncio
+          var atOptions = {
+            'key' : '100bec211103c6c4beef83b1c8eef593',
+            'format' : 'iframe',
+            'height' : 60,
+            'width' : 468,
+            'params' : {}
+          };
+
+          // 2. Criar script dinamicamente
+          var script = document.createElement('script');
+          script.src = "https://www.highperformanceformat.com/100bec211103c6c4beef83b1c8eef593/invoke.js";
+
+          // 3. Inserir dentro da div correta
+          var container = document.getElementById("ad-468x60");
+          if (container) {
+            container.appendChild(script);
+          }
+        }
+      </script>
+
     </div>
   </div>
-
+  </div>
 </body>
 </html>
