@@ -1,0 +1,45 @@
+@media (min-width: 600px)
+{
+    .Banner320,
+    .Banner320Container {
+        display: none;
+    }
+    
+    .Banner728Container
+    {
+        width: 728px;
+        height: 110px;
+        color: gray;
+        text-align: center;
+        justify-content: center;
+
+    }
+
+    .Banner728
+    {
+        width: 728px;
+        height: 90px;
+        background-color: black;
+    }
+}
+
+@media (max-width: 600px) {
+  .Banner728,
+  .Banner728Container {
+    display: none;
+  }
+
+  .Banner320Container {
+    width: 100%;
+    color: gray;
+    text-align: center;
+  }
+
+  .Banner320 {
+    width: 100%;
+    max-width: 320px;
+    height: 90px;
+    background-color: black;
+    margin: 0 auto;
+  }
+}
