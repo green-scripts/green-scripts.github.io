@@ -387,6 +387,11 @@
   padding: 2rem 1rem 4rem;
 }
 
+@keyframes spinBtn {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
 /* ── Mobile ── */
 @media (max-width: 1100px) {
   /* Esconde sidebars, mostra banners mobile */
