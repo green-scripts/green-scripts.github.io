@@ -6,6 +6,7 @@
   <title>Guia de Instalação — Redação 1</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="RedPR.css">
+  <link rel="stylesheet" href="RedPR-mobile.css">
   <link rel="shortcut icon" href="Imagens/SiteIcon.png" type="image/x-icon">
 </head>
 <body>
@@ -150,66 +151,161 @@
   </div><!-- /steps-tablet -->
 
 
-  <!-- ======================= PASSOS MOBILE (< 600px) ======================= -->
+  <!-- ======================= PASSOS MOBILE (< 600px) — FIREFOX / INFANTIL ======================= -->
   <div class="steps-mobile">
 
+    <!-- PASSO 2 — Baixar o Firefox -->
     <div class="step-card">
       <span class="step-badge">PASSO 2</span>
-      <h2 class="step-title">Salve Qualquer Página nos Favoritos</h2>
+      <div class="firefox-badge">
+        <!-- Ícone SVG do Firefox -->
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" fill="#FF6611"/>
+          <ellipse cx="16" cy="16" rx="8" ry="8" fill="#FFD700"/>
+          <path d="M24 16c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8" stroke="#FF6611" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="4" fill="#FF6611"/>
+        </svg>
+        Precisa do Firefox
+      </div>
+      <h2 class="step-title">Primeiro: Baixe o Firefox! 🦊</h2>
       <p class="step-instruction">
-        No celular, precisamos criar um favorito qualquer para depois trocar o endereço pelo código. Siga conforme o seu navegador:
+        Este tutorial funciona com o <strong>Firefox</strong>. Ele é um navegador gratuito e bem legal! Se você já tem ele no celular, pode pular este passo. 😄
       </p>
-      <div class="mini-steps">
-        <div class="mini-step">
-          <div class="mini-step-icon">🌐</div>
-          <div>
-            <strong>Chrome (Android):</strong> Toque nos 3 pontinhos <strong>⋮</strong> no canto superior direito → toque na <strong>estrela ☆</strong> para salvar.
-          </div>
-        </div>
-        <div class="mini-step">
-          <div class="mini-step-icon">🍎</div>
-          <div>
-            <strong>Safari (iPhone/iPad):</strong> Toque no ícone de <strong>compartilhar</strong> (quadrado com seta ↑) na parte de baixo da tela → toque em <strong>"Adicionar aos Favoritos"</strong>.
-          </div>
-        </div>
+
+      <a href="https://www.mozilla.org/pt-BR/firefox/browsers/mobile/android/" target="_blank" class="fox-download-btn">
+        <!-- Ícone Firefox SVG completo -->
+        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <radialGradient id="fxa" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFE85A"/>
+            <stop offset="60%" stop-color="#FF980E"/>
+            <stop offset="100%" stop-color="#FF3750"/>
+          </radialGradient>
+          <circle cx="32" cy="32" r="30" fill="url(#fxa)"/>
+          <ellipse cx="32" cy="32" rx="16" ry="16" fill="#0090ED" opacity="0.9"/>
+          <path d="M48 32c0 8.8-7.2 16-16 16S16 40.8 16 32s7.2-16 16-16" stroke="#FF6611" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M32 20c6.6 0 12 5.4 12 12" stroke="#FFE85A" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="32" cy="32" r="6" fill="#FF6611"/>
+          <circle cx="32" cy="32" r="3" fill="#FFE85A"/>
+        </svg>
+        Baixar o Firefox grátis
+      </a>
+
+      <p class="already-have">
+        Já tem o Firefox? <a onclick="document.querySelector('.steps-mobile .step-card:nth-child(2)').scrollIntoView({behavior:'smooth'})">Pule para o Passo 3 ↓</a>
+      </p>
+
+      <div class="kid-tip">
+        💡 <strong>Dica:</strong> Peça ajuda pra um adulto instalar se precisar! Depois que instalar, abra o Firefox e volte pra cá.
       </div>
     </div>
 
+    <!-- PASSO 3 — Salvar qualquer página nos favoritos -->
     <div class="step-card">
       <span class="step-badge">PASSO 3</span>
-      <h2 class="step-title">Edite o Favorito com o Código</h2>
-      <p class="step-instruction">
-        Agora vamos transformar o favorito que você salvou no nosso botão mágico. Siga as instruções do seu navegador:
-      </p>
-      <div class="mini-steps">
-        <div class="mini-step">
-          <div class="mini-step-icon">🌐</div>
-          <div>
-            <strong>Chrome (Android):</strong><br>
-            Toque nos 3 pontinhos <strong>⋮</strong> → <strong>Favoritos</strong> → encontre o favorito que você acabou de criar → pressione e segure → toque em <strong>Editar</strong> → apague o endereço no campo URL e cole o código do Passo 1 → toque em <strong>Salvar</strong>.
-          </div>
-        </div>
-        <div class="mini-step">
-          <div class="mini-step-icon">🍎</div>
-          <div>
-            <strong>Safari (iPhone/iPad):</strong><br>
-            Toque no ícone de <strong>livro</strong> (canto inferior) → <strong>Favoritos</strong> → toque em <strong>Editar</strong> (canto superior) → encontre o favorito criado → toque nele → apague o endereço no campo URL e cole o código do Passo 1 → toque em <strong>OK</strong> → <strong>Concluído</strong>.
-          </div>
-        </div>
+      <div class="firefox-badge">
+        <svg width="14" height="14" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="#FF6611"/><circle cx="32" cy="32" r="14" fill="#FFD700"/></svg>
+        Firefox no celular
       </div>
-      <div class="tip-box">
-        💡 <strong>Dica:</strong> Mude o nome do favorito para <span class="highlight">Redação 1</span> para ficar fácil de achar depois!
+      <h2 class="step-title">Adicionar Favorito ⭐</h2>
+      <p class="step-instruction">
+        Agora vamos adicionar o redação paraná aos <strong>FAVORITOS</strong> 
+      </p>
+
+      <div class="big-step">
+        <span class="big-step-num">1</span>
+        <div>Entre no <strong>REDAÇÃO PARANÁ</strong> e depois entre em <strong>propostas</strong>.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">2</span>
+        <div>Clique nos <strong>3 PONTINHOS  <strong style="font-size:1.1rem; letter-spacing:2px;">⋮</strong></strong> e depois em <strong>"Adicionar aos favoritos"</strong>.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">3</span>
+        <div>Uma mensagem vai aparecer dizendo que a página foi salva. <strong>Ótimo!</strong></div>
+      </div>
+
+      <div class="kid-tip">
+        🦊 <strong>Atenção:</strong> Não feche o Firefox
       </div>
     </div>
 
+    <!-- PASSO 4 — Editar o favorito com o código -->
     <div class="step-card">
       <span class="step-badge">PASSO 4</span>
-      <h2 class="step-title">Pronto! Veja como usar</h2>
+      <div class="firefox-badge">
+        <svg width="14" height="14" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="#FF6611"/><circle cx="32" cy="32" r="14" fill="#FFD700"/></svg>
+        Firefox no celular
+      </div>
+      <h2 class="step-title">Editar o favorito✏️</h2>
       <p class="step-instruction">
-        Entre em alguma redação no Redação Paraná Abra os favoritos e toque em <strong class="highlight">Redação 1</strong> para ativar o script!
+        Agora vamos trocar o endereço do favorito pelo <strong>código do script</strong> que você copiou no Passo 1. Siga:
       </p>
+
+      <div class="big-step">
+        <span class="big-step-num">1</span>
+        <div>Toque nos <strong>três pontinhos ⋮</strong> do Firefox novamente.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">2</span>
+        <div>Toque em <strong>"Favoritos"</strong> para ver a lista de favoritos.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">3</span>
+        <div>Encontre o favorito que você acabou de salvar (Redação Paraná). Toque nos <strong>3 PONTINHOS</strong> ao lado dele.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">4</span>
+        <div>Toque em <strong>"Editar"</strong> ✏️</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">5</span>
+        <div>No campo <strong>Nome (Primeiro Retângulo.)</strong>, apague o que tiver e escreva: <span class="highlight">Redação 1</span></div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">6</span>
+        <div>No campo <strong>URL (Segundo Retângulo)</strong>, <strong>apague tudo</strong> que tem nele e  <strong>cole</strong> o código do Passo 1. <em>(pressione e segure no retângulo → toque em "Colar")</em></div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">7</span>
+        <div>Toque em voltar: <strong>&#8592;</strong> no canto superior esquerdo</div>
+      </div>
+
+      <div class="kid-tip">
+        🤔 <strong>Travou em algum passo?</strong> Veja o vídeo no topo do site para resolver.
+      </div>
+    </div>
+
+    <!-- PASSO 5 — Usar! -->
+    <div class="step-card">
+      <span class="step-badge">PASSO 5</span>
+      <h2 class="step-title">Tá pronto! Agora é só usar! 🚀</h2>
+      <p class="step-instruction">
+        Toda vez que você quiser usar o <strong class="highlight">Redação 1</strong>, é simples assim:
+      </p>
+
+      <div class="big-step">
+        <span class="big-step-num">1</span>
+        <div>Abra o <strong>Firefox</strong> e entre no site da <strong>Redação Paraná</strong>.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">2</span>
+        <div><strong>Abra a redação que você quer colar.</strong></div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">3</span>
+        <div>Toque nos <strong>três pontinhos ⋮</strong> → <strong>Favoritos</strong> → toque em <strong class="highlight">Redação 1</strong>.</div>
+      </div>
+      <div class="big-step">
+        <span class="big-step-num">4</span>
+        <div>🎉 <strong>Pronto!</strong> O script vai funcionar automaticamente!</div>
+      </div>
+
       <div class="alert-box">
-        ⚠️ <strong>Atenção:</strong> O botão só funciona quando você estiver dentro da página da redação.
+        ⚠️ <strong>Importante:</strong> O botão <strong>só funciona</strong> quando você já está dentro da página da redação. Se você tocar nele em outro site, nada vai acontecer.
+      </div>
+
+      <div class="kid-tip">
+        🦊 <strong>Lembre-se:</strong> Sempre use o <strong>Firefox</strong> para isso funcionar!. 
       </div>
     </div>
 
@@ -279,6 +375,44 @@
 
   setupPage();
 </script>
-  
+  <script>
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    {
+      const devModeAlert = document.createElement('div');
+
+      devModeAlert.style.position = 'fixed';
+      devModeAlert.style.left = '92%';
+      devModeAlert.style.top = '10%';
+      devModeAlert.style.transform = 'translate(-50%, -50%)';
+      devModeAlert.style.zIndex = '10000';
+
+      devModeAlert.style.width = '150px'; 
+      devModeAlert.style.height = '45px'; 
+      devModeAlert.style.boxSizing = 'border-box';
+
+      devModeAlert.style.backgroundColor = 'black';
+      devModeAlert.style.borderRadius = '25px';
+      devModeAlert.style.border = '2px solid rgb(0,215,0)';
+
+      devModeAlert.textContent = 'DEV MODE';
+      devModeAlert.style.fontFamily = 'monospace';
+      devModeAlert.style.fontSize = '24px';
+      devModeAlert.style.fontWeight = 'bold';
+      devModeAlert.style.color = 'rgb(0,215,0)';
+
+      devModeAlert.style.display = 'flex';
+      devModeAlert.style.alignItems = 'center';
+      devModeAlert.style.justifyContent = 'center';
+
+      document.body.appendChild(devModeAlert);
+    }
+    else
+    {
+      const socialBarScript = document.createElement('script')
+      socialBarScript.src = "https://socialbar.greenscriptshub.workers.dev/69/48/71/694871912c33e6042fa1c2eb0b8d6988.js"
+
+      document.body.appendChild(socialBarScript);
+    }
+  </script>
 </body>
 </html>
