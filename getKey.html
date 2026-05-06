@@ -11,12 +11,18 @@
   <link rel="shortcut icon" href="Imagens/SiteIcon.png" type="image/x-icon">
 </head>
 <body>
+
+  
+
+
   <!--IN PAGE PUSH BANNER-->
   <script>(function(s){s.dataset.zone='10968381',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
   <!--VIGNETTE BANNER-->
   <script>(function(s){s.dataset.zone='10968369',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
+  <!--CASHOUT ADS-->
+  
   <div class="bg-glow-bl"></div>
   <div class="bg-glow-tr"></div>
 
@@ -110,19 +116,43 @@
     <div class="Banner728Container">
       <p>Publicidade</p>
       <div class="Banner728">
-          
+        <script>
+          atOptions = {
+          'key' : '53796738d01e192f38cd677b0340799e',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+        </script>
+        <script src="https://banner728.greenscriptshub.workers.dev/53796738d01e192f38cd677b0340799e/invoke.js"></script>
       </div>
     </div>
 
 
-    <div class="Banner320Container">
+  <div class="Banner320Container">
   <p>Publicidade</p>
   <div class="Banner320">
-
+    <script>
+      atOptions = {
+        'key' : '7c2fb76274b9093f4da548e80121d409',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script src="https://banner320.greenscriptshub.workers.dev/7c2fb76274b9093f4da548e80121d409/invoke.js"></script>
   </div>
 </div>
 
-  </div>
+
+  <script>
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    document.querySelector('.Banner728Container').style.display = 'none';
+    document.querySelector('.Banner320Container').style.display = 'none';
+  }
+  </script>
   <script src="getKey.js"></script>
 </body>
 </html>
