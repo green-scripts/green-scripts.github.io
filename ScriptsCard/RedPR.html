@@ -29,16 +29,6 @@
     <p class="header-sub">Siga os passos abaixo para ativar o script no seu navegador. É fácil e rápido!</p>
   </header>
 
-  <!-- Vídeo -->
-  <div class="video-wrapper">
-    <div class="video-container" id="videoContainer">
-      <video controls poster="thumb-video.jpg" id="tutorialVideo">
-        Seu navegador não suporta vídeos.
-      </video>
-    </div>
-    <p class="video-caption" id="videoCaption"></p>
-  </div>
-
   <!-- ======================= PASSO 1 (igual em todos) ======================= -->
   <div class="step-card">
     <span class="step-badge">PASSO 1</span>
@@ -67,7 +57,7 @@
       </p>
       <div class="key-box">
         <div class="key-row">
-          <span class="os-label">Windows</span>
+          <span class="os-label">Chorme</span>
           <div class="keys"><kbd>Ctrl</kbd><span class="key-plus">+</span><kbd>Shift</kbd><span class="key-plus">+</span><kbd>B</kbd></div>
         </div>
       </div>
@@ -151,7 +141,7 @@
   </div><!-- /steps-tablet -->
 
 
-  <!-- ======================= PASSOS MOBILE (< 600px) — FIREFOX / INFANTIL ======================= -->
+  <!-- ======================= PASSOS MOBILE (< 600px) — FIREFOX ========================================= -->
   <div class="steps-mobile">
 
     <!-- PASSO 2 — Baixar o Firefox -->
@@ -169,7 +159,7 @@
       </div>
       <h2 class="step-title">Primeiro: Baixe o Firefox! 🦊</h2>
       <p class="step-instruction">
-        Este tutorial funciona com o <strong>Firefox</strong>. Ele é um navegador gratuito e bem legal! Se você já tem ele no celular, pode pular este passo. 😄
+        Este tutorial funciona com o <strong>Firefox</strong>. Ele é um navegador gratuito e seguro! Se você já tem ele no celular, pule esse passo.
       </p>
 
       <a href="https://www.mozilla.org/pt-BR/firefox/browsers/mobile/android/" target="_blank" class="fox-download-btn">
@@ -194,9 +184,6 @@
         Já tem o Firefox? <a onclick="document.querySelector('.steps-mobile .step-card:nth-child(2)').scrollIntoView({behavior:'smooth'})">Pule para o Passo 3 ↓</a>
       </p>
 
-      <div class="kid-tip">
-        💡 <strong>Dica:</strong> Peça ajuda pra um adulto instalar se precisar! Depois que instalar, abra o Firefox e volte pra cá.
-      </div>
     </div>
 
     <!-- PASSO 3 — Salvar qualquer página nos favoritos -->
@@ -213,7 +200,7 @@
 
       <div class="big-step">
         <span class="big-step-num">1</span>
-        <div>Entre no <strong>REDAÇÃO PARANÁ</strong> e depois entre em <strong>propostas</strong>.</div>
+        <div>Usando o <strong>FireFox</strong>, entre no <strong>REDAÇÃO PARANÁ</strong> e depois entre em <strong>propostas</strong>.</div>
       </div>
       <div class="big-step">
         <span class="big-step-num">2</span>
@@ -329,21 +316,17 @@
     const vc = document.getElementById('videoContainer');
 
     const config = {
-      mobile:  { src: 'tutorial-mobile.mp4',  label: '📱 Tutorial para Celular',    cap: 'Vídeo com instruções para celular',    ratio: '9/16' },
-      tablet:  { src: 'tutorial-tablet.mp4',   label: '📱 Tutorial para Tablet',     cap: 'Vídeo com instruções para tablet',     ratio: '4/3'  },
-      desktop: { src: 'tutorial-desktop.mp4',  label: '🖥️ Tutorial para Computador', cap: 'Vídeo com instruções para computador', ratio: '16/9' }
+      mobile:  {label: '📱 Tutorial para Celular',    cap: 'Vídeo com instruções para celular',    ratio: '9/16' },
+      tablet:  {label: '📱 Tutorial para Tablet',     cap: 'Vídeo com instruções para tablet',     ratio: '4/3'  },
+      desktop: {label: '🖥️ Tutorial para Computador', cap: 'Vídeo com instruções para computador', ratio: '16/9' }
     };
 
     const c = config[device];
     badge.textContent = c.label;
-    caption.textContent = c.cap;
-    vc.style.aspectRatio = c.ratio;
 
     const source = document.createElement('source');
     source.src = c.src;
     source.type = 'video/mp4';
-    video.appendChild(source);
-    video.load();
   }
 
   function showToast() {
