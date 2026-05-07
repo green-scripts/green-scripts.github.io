@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://green-scripts.github.io/</loc>
+    <loc>https://green-scripts.github.io/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://green-scripts.github.io/scripts.html</loc>
+  </url>
+
+  <url>
+    <loc>https://green-scripts.github.io/getKey.html</loc>
   </url>
 
 </urlset>
