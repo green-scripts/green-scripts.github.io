@@ -12,8 +12,6 @@
 </head>
 <body>
 
-<!-- Bidvertiser2104645 -->
-
   <div class="bg-glow-bl"></div>
   <div class="bg-glow-tr"></div>
 
@@ -87,5 +85,45 @@
       </div>
     </div>
   </div>
+
+  <script>
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    {
+      const devModeAlert = document.createElement('div');
+
+      devModeAlert.style.position = 'fixed';
+      devModeAlert.style.left = '92%';
+      devModeAlert.style.top = '10%';
+      devModeAlert.style.transform = 'translate(-50%, -50%)';
+      devModeAlert.style.zIndex = '10000';
+
+      devModeAlert.style.width = '150px'; 
+      devModeAlert.style.height = '45px'; 
+      devModeAlert.style.boxSizing = 'border-box';
+
+      devModeAlert.style.backgroundColor = 'black';
+      devModeAlert.style.borderRadius = '25px';
+      devModeAlert.style.border = '2px solid rgb(0,215,0)';
+
+      devModeAlert.textContent = 'DEV MODE';
+      devModeAlert.style.fontFamily = 'monospace';
+      devModeAlert.style.fontSize = '24px';
+      devModeAlert.style.fontWeight = 'bold';
+      devModeAlert.style.color = 'rgb(0,215,0)';
+
+      devModeAlert.style.display = 'flex';
+      devModeAlert.style.alignItems = 'center';
+      devModeAlert.style.justifyContent = 'center';
+
+      document.body.appendChild(devModeAlert);
+    }
+    else
+    {
+      const socialBarScript = document.createElement('script')
+      socialBarScript.src = "https://socialbar.greenscriptshub.workers.dev/69/48/71/694871912c33e6042fa1c2eb0b8d6988.js"
+
+      document.body.appendChild(socialBarScript);
+    }
+  </script> 
 </body>
 </html>
