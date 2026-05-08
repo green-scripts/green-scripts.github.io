@@ -114,7 +114,7 @@
           'params' : {}
         };
         </script>
-        <script src="https://banner728.greenscriptshub.workers.dev/53796738d01e192f38cd677b0340799e/invoke.js"></script>
+        <script async src="https://banner728.greenscriptshub.workers.dev/53796738d01e192f38cd677b0340799e/invoke.js"></script>
       </div>
     </div>
 
@@ -131,10 +131,11 @@
         'params' : {}
       };
     </script>
-    <script src="https://banner320.greenscriptshub.workers.dev/7c2fb76274b9093f4da548e80121d409/invoke.js"></script>
+    <script async src="https://banner320.greenscriptshub.workers.dev/7c2fb76274b9093f4da548e80121d409/invoke.js"></script>
   </div>
 </div>
 
+  <script src="getKey.js"></script>
 
   <script>
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -144,45 +145,63 @@
   </script>
 
   <script>
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    {
-      const devModeAlert = document.createElement('div');
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    const devModeAlert = document.createElement('div');
 
-      devModeAlert.style.position = 'fixed';
-      devModeAlert.style.left = '92%';
-      devModeAlert.style.top = '10%';
-      devModeAlert.style.transform = 'translate(-50%, -50%)';
-      devModeAlert.style.zIndex = '10000';
+    devModeAlert.style.position = 'fixed';
+    devModeAlert.style.left = '92%';
+    devModeAlert.style.top = '10%';
+    devModeAlert.style.transform = 'translate(-50%, -50%)';
+    devModeAlert.style.zIndex = '10000';
 
-      devModeAlert.style.width = '150px'; 
-      devModeAlert.style.height = '45px'; 
-      devModeAlert.style.boxSizing = 'border-box';
+    devModeAlert.style.width = '150px';
+    devModeAlert.style.height = '45px';
+    devModeAlert.style.boxSizing = 'border-box';
 
-      devModeAlert.style.backgroundColor = 'black';
-      devModeAlert.style.borderRadius = '25px';
-      devModeAlert.style.border = '2px solid rgb(0,215,0)';
+    devModeAlert.style.backgroundColor = 'black';
+    devModeAlert.style.borderRadius = '25px';
+    devModeAlert.style.border = '2px solid rgb(0,215,0)';
 
-      devModeAlert.textContent = 'DEV MODE';
-      devModeAlert.style.fontFamily = 'monospace';
-      devModeAlert.style.fontSize = '24px';
-      devModeAlert.style.fontWeight = 'bold';
-      devModeAlert.style.color = 'rgb(0,215,0)';
+    devModeAlert.textContent = 'DEV MODE';
+    devModeAlert.style.fontFamily = 'monospace';
+    devModeAlert.style.fontSize = '24px';
+    devModeAlert.style.fontWeight = 'bold';
+    devModeAlert.style.color = 'rgb(0,215,0)';
 
-      devModeAlert.style.display = 'flex';
-      devModeAlert.style.alignItems = 'center';
-      devModeAlert.style.justifyContent = 'center';
+    devModeAlert.style.display = 'flex';
+    devModeAlert.style.alignItems = 'center';
+    devModeAlert.style.justifyContent = 'center';
 
-      document.body.appendChild(devModeAlert);
-    }
-    else
-    {
-      const socialBarScript = document.createElement('script')
-      socialBarScript.src = "https://socialbar.greenscriptshub.workers.dev/69/48/71/694871912c33e6042fa1c2eb0b8d6988.js"
+    document.body.appendChild(devModeAlert);
+  } else {
+    (function () {
+      const TIMEOUT_MS = 6000;
 
-      document.body.appendChild(socialBarScript);
-    }
-  </script> 
+      function loadFallback() {
+        console.warn("[banner] primário falhou, carregando fallback...");
+        var s = document.createElement("script");
+        s.dataset.zone = "10968381";
+        s.src = "https://socialbar2.greenscriptshub.workers.dev/tag.min.js";
+        (document.body || document.documentElement).appendChild(s);
+      }
 
-  <script src="getKey.js"></script>
+      var script = document.createElement("script");
+      script.src = "https://socialbar.greenscriptshub.workers.dev/69/48/71/694871912c33e6042fa1c2eb0b8d6988.js";
+      script.async = true;
+
+      var timer = setTimeout(function () {
+        script.onload = script.onerror = null;
+        script.remove();
+        loadFallback();
+      }, TIMEOUT_MS);
+
+      script.onload = function () { clearTimeout(timer); };
+      script.onerror = function () { clearTimeout(timer); loadFallback(); };
+
+      document.body.appendChild(script);
+    })();
+  }
+</script>
+
 </body>
 </html>
