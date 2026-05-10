@@ -124,6 +124,58 @@
 
       document.body.appendChild(socialBarScript);
     }
-  </script> 
+  </script>
+
+  <script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient('https://btdbraicotnkhfkexwyh.supabase.co', "REMOVED_KEY")
+  const canal = supabase.channel('analytics')
+
+  const join_in = new Date().toISOString()
+  const page = "home"
+  const admCookie = document.cookie.match('(^|;)\\s*admin\\s*=\\s*([^;]+)')?.[2] || null;
+  const URL = 'https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/PageTime'
+  const anomKey = 'REMOVED_KEY'
+
+  let enviado = false
+
+  function enviarDados(arrive_in, leave_in, session_time_sec) {
+    if (enviado) return
+    enviado = true
+
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${anomKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ page, arrive_in, leave_in, session_time_sec, admCookie }),
+      keepalive: true
+    })
+  }
+
+  canal.on('presence', { event: 'sync' }, () => {})
+  .subscribe(async (status) => {
+    if (status === 'SUBSCRIBED') {
+      await canal.track({ page, join_in })
+    }
+  })
+
+  window.addEventListener('beforeunload', () => {
+    const leave_in = new Date().toISOString()
+    const session_time_sec = Math.floor(
+      (new Date(leave_in) - new Date(join_in)) / 1000
+    )
+    if (admCookie === null)
+    {
+      enviarDados(join_in, leave_in, session_time_sec)
+    }
+    else
+    {
+      console.log("nao me hackeia por favor 😭)")
+    }
+  })
+</script>
 </body>
 </html>

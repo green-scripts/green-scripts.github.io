@@ -5,7 +5,9 @@
 }
 
 body {
-  background-image: linear-gradient(to right, rgb(34, 34, 34),black);
+  background-color: #0f0e0d;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, #0f1120 0%, transparent 60%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,8 +16,9 @@ body {
   font-family: 'Syne', sans-serif;
   padding: 2rem 1rem;
   position: relative;
-  overflow-x: hidden; /* era "overflow: hidden" — esse bloqueava o scroll vertical */
+  overflow-x: hidden;
 }
+
 
 .bg-glow-bl {
   position: fixed;
