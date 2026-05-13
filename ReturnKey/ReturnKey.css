@@ -1,0 +1,248 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: black;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.Shaine {
+  position: fixed;
+  z-index: 9999;
+}
+
+#TopShaine    { top: 0;    left: 0; right: 0;  height: 1px; }
+#BottomShaine { bottom: 0; left: 0; right: 0;  height: 1px; }
+#LeftShaine   { top: 0;    left: 0; bottom: 0; width: 1px;  }
+#RightShaine  { top: 0;    right: 0; bottom: 0; width: 1px; }
+
+#TopShaine::after, #BottomShaine::after,
+#LeftShaine::after, #RightShaine::after {
+  content: '';
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(18px);
+  opacity: 0;
+}
+
+#TopShaine::after, #BottomShaine::after {
+  width: 35%;
+  height: 20px;
+  background: radial-gradient(ellipse at center, #00ff00 40%, transparent 60%);
+}
+#TopShaine::after    { top: -6px;    animation: drift-h 9s ease-in-out infinite; }
+#BottomShaine::after { bottom: -6px; animation: drift-h 9s ease-in-out infinite 4.5s; }
+
+#LeftShaine::after, #RightShaine::after {
+  height: 50%;
+  width: 12px;
+  background: radial-gradient(ellipse at center, #00ff00 40%, transparent 60%);
+}
+#LeftShaine::after  { left: -6px;  animation: drift-v 9s ease-in-out infinite 2s; }
+#RightShaine::after { right: -6px; animation: drift-v 9s ease-in-out infinite 6.5s; }
+
+@keyframes drift-h {
+  0%   { left: -35%; opacity: 0; }
+  15%  { opacity: 0.55; }
+  50%  { left: 32.5%; opacity: 0.7; }
+  85%  { opacity: 0.55; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes drift-v {
+  0%   { top: -35%; opacity: 0; }
+  15%  { opacity: 0.55; }
+  50%  { top: 32.5%; opacity: 0.7; }
+  85%  { opacity: 0.55; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 1rem;
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  padding: 2rem;
+  animation: card-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, #00ff0022, transparent 40%, #00ff0011 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card h1 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d7e613;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fade-in 0.8s ease both 0.2s;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.key-display {
+  width: 100%;
+  background: #060606;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  color: #d7e613;
+  font-family: 'monospace';
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 12px 14px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+  word-break: break-all;
+  user-select: none;
+  animation: fade-in 0.8s ease both 0.35s;
+}
+
+.card textarea:focus {
+  border-color: #00ff0033;
+  box-shadow: 0 0 0 3px #00ff000d;
+}
+
+.card textarea::placeholder {
+  color: #333;
+}
+
+.copy-btn {
+  width: 100%;
+  padding: 11px;
+  background: transparent;
+  border: 1px solid #00ff0033;
+  border-radius: 10px;
+  color: #00cc00;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  animation: fade-in 0.8s ease both 0.5s;
+}
+
+.copy-btn:hover {
+  background: #00ff000d;
+  border-color: #00ff0066;
+  color: #00ff00;
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+.copy-btn.copied {
+  border-color: #00ff0099;
+  color: #00ff00;
+  background: #00ff0011;
+}
+
+.copy-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+}
+
+#loader.loader-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loader-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.loader-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00ff00;
+  box-shadow: 0 0 8px #00ff00;
+  animation: dot-pulse 1.2s ease-in-out infinite;
+}
+
+.loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+.loader-text {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #00ff0066;
+  font-family: 'Courier New', monospace;
+  animation: fade-flicker 2s ease-in-out infinite;
+}
+
+@keyframes fade-flicker {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
