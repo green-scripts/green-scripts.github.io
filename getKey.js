@@ -1,4 +1,4 @@
-getKey
+getKey()
 
 async function getKey() {
   const URL = 'REMOVED_ENDPOINT_3'
