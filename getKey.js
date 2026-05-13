@@ -27,4 +27,4 @@ function esconderLoader() {
     setTimeout(() => loader.remove(), 600);
 }
 
-setTimeout(esconderLoader, 5000);
+setTimeout(esconderLoader, 10000);

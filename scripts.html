@@ -4,64 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenScripts HUB — Scripts</title>
+  <meta name="description" content="Todos os scripts gratuitos do GreenScripts HUB para estudantes do Paraná.">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="scripts.css">
-  <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="Imagens/SiteIcon.png" type="image/x-icon">
 </head>
 <body>
 
-  <div class="bg-glow-bl"></div>
-  <div class="bg-glow-tr"></div>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="index.html" class="btn-back">
+        <span class="btn-back-arrow">←</span>
+        <span class="btn-back-txt">Voltar</span>
+      </a>
+      <span class="topbar-sep">·</span>
+      <span class="topbar-title">Scripts disponíveis</span>
+    </div>
+    <div class="topbar-logo">
+      <span class="g">Green</span>Scripts <span class="hub">HUB</span>
+    </div>
+  </div>
 
-  <div class="page-layout">
-    <!-- Conteúdo principal -->
-    <main class="main-content">
+  <!-- CONTEÚDO -->
+  <div class="wrap">
 
-      <!-- Cabeçalho -->
-      <div class="page-header">
-        <a href="index.html" class="btn-voltar">← Voltar</a>
-        <div class="logo-area" style="margin-bottom:0;">
-          <div class="logo-text"><span>Green</span>Scripts <span class="logo-hub">HUB</span></div>
-          <div class="logo-sub">Scripts disponíveis</div>
+    <!-- HEADER DA SEÇÃO -->
+    <div class="section-header">
+      <div class="section-title">Scripts <span>disponíveis</span></div>
+      <span class="section-count">1 script encontrado</span>
+    </div>
+
+    <!-- GRADE DE SCRIPTS -->
+    <div class="scripts-grid">
+
+      <!-- Card: Redação Paraná -->
+      <div class="script-card">
+        <div class="card-top-line"></div>
+        <div class="ribbon">v1.2.0</div>
+        <div class="script-card-img-wrap">
+          <img src="Imagens/RedaçãoParanaIcon.png" alt="Redação Paraná" class="script-card-img">
+          <div class="img-overlay"></div>
+        </div>
+        <div class="script-card-body">
+          <div class="title-row">
+            <h3 class="script-card-title">Redação Paraná</h3>
+            <span class="card-badge">Grátis</span>
+          </div>
+          <p class="script-card-desc">Colagem automática e desbloqueio de restrições.</p>
+          <div class="card-footer">
+            <div class="script-meta">
+              <span class="script-tag">v1.2.0</span>
+              <span class="script-tag active">Ativo</span>
+            </div>
+            <a href="ScriptsCard/RedPR.html" class="access-btn"><span>Usar →</span></a>
+          </div>
+          <div class="views">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            1.1K visualizações
+          </div>
         </div>
       </div>
 
-      <!-- Grade de scripts -->
-      <div class="scripts-grid">
+      <!-- Adicione mais cards aqui seguindo o mesmo padrão -->
 
-        <!-- Card Script: Redação 1 -->
-        <div class="script-card">
-          <div class="card-top-bar"></div>
-          <div class="script-card-img-wrap">
-            <img src="Imagens/RedaçãoParanaIcon.png" alt="Redação 1" class="script-card-img">
-            <div class="script-card-img-overlay"></div>
-          </div>
-          <div class="script-card-body">
-            <div class="script-card-title-row">
-              <h3 class="script-card-title">Redação Paraná</h3>
-              <span class="card-badge">Grátis</span>
-            </div>
-            <hr class="card-divider">
-            <p class="script-card-desc">Script para redações com colagem automática</p>
-            <div class="script-card-footer">
-              <div class="script-meta">
-                <span class="script-tag">v1.0</span>
-                <span class="script-tag">Ativo</span>
-              </div>
-              <a href="ScriptsCard/RedPR.html">
-                  <button class="access-btn">
-                    <span class="btn-label">Usar <span class="btn-arrow">→</span></span>
-                  </button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Adicione mais cards aqui seguindo o mesmo padrão -->
-
-      </div>
-    </main>
+    </div>
   </div>
 
   <script type="module">
@@ -71,7 +81,7 @@
   const canal = supabase.channel('analytics')
 
   const join_in = new Date().toISOString()
-  const page = "script"
+  const page = "scripts"
   const admCookie = document.cookie.match('(^|;)\\s*admin\\s*=\\s*([^;]+)')?.[2] || null;
   const URL = 'https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/PageTime'
   const anomKey = 'REMOVED_KEY'
@@ -81,7 +91,6 @@
   function enviarDados(arrive_in, leave_in, session_time_sec) {
     if (enviado) return
     enviado = true
-
     fetch(URL, {
       method: 'POST',
       headers: {
@@ -102,19 +111,14 @@
 
   window.addEventListener('beforeunload', () => {
     const leave_in = new Date().toISOString()
-    const session_time_sec = Math.floor(
-      (new Date(leave_in) - new Date(join_in)) / 1000
-    )
-    if (admCookie === null)
-    {
+    const session_time_sec = Math.floor((new Date(leave_in) - new Date(join_in)) / 1000)
+    if (admCookie === null) {
       enviarDados(join_in, leave_in, session_time_sec)
-    }
-    else
-    {
+    } else {
       console.log("nao me hackeia por favor 😭)")
     }
   })
-</script>
+  </script>
 
 </body>
 </html>
