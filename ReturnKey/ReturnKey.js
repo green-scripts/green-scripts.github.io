@@ -53,17 +53,13 @@ async function GetToken(token)
 }
 
 async function VerifyToken(token) {
-    
-  const URL = 'REMOVED_ENDPOINT_3'
-  const anomKey = 'REMOVED_KEY'
 
   try
   {
-    const response = await fetch(URL,
-    {
+    const response = await fetch('https://returnkey.greenscriptshub.workers.dev', {
       method: 'POST',
-      headers: {'Authorization': `Bearer ${anomKey}`, 'Content-Type': 'application/json'},
-      body: JSON.stringify({token})
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token })
     })
     
     if (!response.ok) {
@@ -90,4 +86,4 @@ function esconderLoader() {
     setTimeout(() => loader.remove(), 600);
 }
 
-setTimeout(esconderLoader, 5000);
+setTimeout(esconderLoader, 7500);

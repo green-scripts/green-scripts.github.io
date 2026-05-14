@@ -1,12 +1,9 @@
 getKey()
 
 async function getKey() {
-  const URL = 'REMOVED_ENDPOINT_3'
-  const anomKey = 'REMOVED_KEY'
-
-  const response = await fetch(URL,
-    {method: 'GET',
-    headers: {'Authorization': `Bearer ${anomKey}`, 'Content-Type': 'application/json'}}
+  const response = await fetch('https://getkey.greenscriptshub.workers.dev/', {
+    method: 'GET',
+    headers: {'Content-Type': 'application/json'}}
   )
 
   if(!response.ok)
