@@ -73,7 +73,7 @@
     <section class="stats" aria-label="Estatísticas">
       <div class="scard">
         <div class="slabel">Keys geradas (30 dias)</div>
-        <div class="sval">358</div>
+        <div class="sval" id="keys">Carregando</div>
         <div class="sunit">chaves válidas entregues</div>
       </div>
       <div class="scard">
@@ -161,6 +161,31 @@
     <footer class="foot">© 2026 GreenScripts HUB · Feito para estudantes do Paraná</footer>
 
   </div>
+
+  <script>
+    const keysDiv = document.getElementById('keys')
+    getNumOfKeys();
+    
+    async function getNumOfKeys() {
+    const URL = 'REMOVED_ENDPOINT_1'
+    const anomKey = 'REMOVED_KEY'
+
+    const response = await fetch(URL,
+      {method: 'GET',
+      headers: {'Authorization': `Bearer ${anomKey}`, 'Content-Type': 'application/json'}}
+    )
+
+    if(!response.ok)
+    {
+      keysDiv.innerText = '173'
+    }
+
+    const data = await response.json()
+    keysDiv.innerText = data.totalKeys    
+  }
+  
+  </script>
+
 
   <script type="module">
   import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
