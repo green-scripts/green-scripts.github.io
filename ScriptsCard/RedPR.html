@@ -300,157 +300,63 @@
 
 </div><!-- /container -->
 
-<script>
-  function getDevice() {
-    const w = window.innerWidth;
-    if (w < 600) return 'mobile';
-    if (w < 1024) return 'tablet';
-    return 'desktop';
-  }
-
-  function setupPage() {
-    const device = getDevice();
-    const video = document.getElementById('tutorialVideo');
-    const badge = document.getElementById('deviceBadge');
-    const caption = document.getElementById('videoCaption');
-    const vc = document.getElementById('videoContainer');
-
-    const config = {
-      mobile:  {label: '📱 Tutorial para Celular',    cap: 'Vídeo com instruções para celular',    ratio: '9/16' },
-      tablet:  {label: '📱 Tutorial para Tablet',     cap: 'Vídeo com instruções para tablet',     ratio: '4/3'  },
-      desktop: {label: '🖥️ Tutorial para Computador', cap: 'Vídeo com instruções para computador', ratio: '16/9' }
-    };
-
-    const c = config[device];
-    badge.textContent = c.label;
-
-    const source = document.createElement('source');
-    source.src = c.src;
-    source.type = 'video/mp4';
-  }
-
-  function showToast() {
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
-  }
-
-  function copyFunc() {
-    const text = document.getElementById('scriptCode').innerText;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(showToast).catch(fallbackCopy);
-    } else {
-      fallbackCopy();
-    }
-    function fallbackCopy() {
-      const el = document.createElement('textarea');
-      el.value = text;
-      el.style.position = 'fixed';
-      el.style.opacity = '0';
-      document.body.appendChild(el);
-      el.focus();
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-      showToast();
-    }
-  }
-
-  setupPage();
-</script>
   <script>
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    {
-      const devModeAlert = document.createElement('div');
-
-      devModeAlert.style.position = 'fixed';
-      devModeAlert.style.left = '92%';
-      devModeAlert.style.top = '10%';
-      devModeAlert.style.transform = 'translate(-50%, -50%)';
-      devModeAlert.style.zIndex = '10000';
-
-      devModeAlert.style.width = '150px'; 
-      devModeAlert.style.height = '45px'; 
-      devModeAlert.style.boxSizing = 'border-box';
-
-      devModeAlert.style.backgroundColor = 'black';
-      devModeAlert.style.borderRadius = '25px';
-      devModeAlert.style.border = '2px solid rgb(0,215,0)';
-
-      devModeAlert.textContent = 'DEV MODE';
-      devModeAlert.style.fontFamily = 'monospace';
-      devModeAlert.style.fontSize = '24px';
-      devModeAlert.style.fontWeight = 'bold';
-      devModeAlert.style.color = 'rgb(0,215,0)';
-
-      devModeAlert.style.display = 'flex';
-      devModeAlert.style.alignItems = 'center';
-      devModeAlert.style.justifyContent = 'center';
-
-      document.body.appendChild(devModeAlert);
+    function getDevice() {
+      const w = window.innerWidth;
+      if (w < 600) return 'mobile';
+      if (w < 1024) return 'tablet';
+      return 'desktop';
     }
-    else
-    {
-      const socialBarScript = document.createElement('script')
-      socialBarScript.src = "https://socialbar.greenscriptshub.workers.dev/69/48/71/694871912c33e6042fa1c2eb0b8d6988.js"
 
-      document.body.appendChild(socialBarScript);
+    function setupPage() {
+      const device = getDevice();
+      const video = document.getElementById('tutorialVideo');
+      const badge = document.getElementById('deviceBadge');
+      const caption = document.getElementById('videoCaption');
+      const vc = document.getElementById('videoContainer');
+
+      const config = {
+        mobile:  {label: '📱 Tutorial para Celular',    cap: 'Vídeo com instruções para celular',    ratio: '9/16' },
+        tablet:  {label: '📱 Tutorial para Tablet',     cap: 'Vídeo com instruções para tablet',     ratio: '4/3'  },
+        desktop: {label: '🖥️ Tutorial para Computador', cap: 'Vídeo com instruções para computador', ratio: '16/9' }
+      };
+
+      const c = config[device];
+      badge.textContent = c.label;
+
+      const source = document.createElement('source');
+      source.src = c.src;
+      source.type = 'video/mp4';
     }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function copyFunc() {
+      const text = document.getElementById('scriptCode').innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(showToast).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+      function fallbackCopy() {
+        const el = document.createElement('textarea');
+        el.value = text;
+        el.style.position = 'fixed';
+        el.style.opacity = '0';
+        document.body.appendChild(el);
+        el.focus();
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showToast();
+      }
+    }
+
+    setupPage();
   </script>
-
-
-  <script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-
-  const supabase = createClient('https://btdbraicotnkhfkexwyh.supabase.co', "REMOVED_KEY")
-  const canal = supabase.channel('analytics')
-
-  const join_in = new Date().toISOString()
-  const page = "RedPR"
-  const admCookie = document.cookie.match('(^|;)\\s*admin\\s*=\\s*([^;]+)')?.[2] || null;
-  const URL = 'https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/PageTime'
-  const anomKey = 'REMOVED_KEY'
-
-  let enviado = false
-
-  function enviarDados(arrive_in, leave_in, session_time_sec) {
-    if (enviado) return
-    enviado = true
-
-    fetch(URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${anomKey}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ page, arrive_in, leave_in, session_time_sec, admCookie }),
-      keepalive: true
-    })
-  }
-
-  canal.on('presence', { event: 'sync' }, () => {})
-  .subscribe(async (status) => {
-    if (status === 'SUBSCRIBED') {
-      await canal.track({ page, join_in })
-    }
-  })
-
-  window.addEventListener('beforeunload', () => {
-    const leave_in = new Date().toISOString()
-    const session_time_sec = Math.floor(
-      (new Date(leave_in) - new Date(join_in)) / 1000
-    )
-    if (admCookie === null)
-    {
-      enviarDados(join_in, leave_in, session_time_sec)
-    }
-    else
-    {
-      console.log("nao me hackeia por favor 😭)")
-    }
-  })
-</script>
-
-
 </body>
 </html>
