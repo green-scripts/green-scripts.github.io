@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia de Instalação — Redação 1</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="RedPR.css">
   <link rel="stylesheet" href="RedPR-mobile.css">
   <link rel="shortcut icon" href="Imagens/GreenScriptsLogo.png" type="image/x-icon">
@@ -12,7 +12,7 @@
 <body>
 
 <a href="../scripts.html" class="btn-voltar">
-    <span>←</span> Voltar
+  <span>←</span> <span>Voltar</span>
 </a>
 
 <!-- Toast de confirmação -->
@@ -25,7 +25,7 @@
 
   <header class="main-header">
     <div class="device-badge" id="deviceBadge"></div>
-    <h1>Como usar o Redação 1</h1>
+    <h1>Como usar o <span class="g">Redação 1</span></h1>
     <p class="header-sub">Siga os passos abaixo para ativar o script no seu navegador. É fácil e rápido!</p>
   </header>
 
@@ -57,7 +57,7 @@
       </p>
       <div class="key-box">
         <div class="key-row">
-          <span class="os-label">Chorme</span>
+          <span class="os-label">Chrome</span>
           <div class="keys"><kbd>Ctrl</kbd><span class="key-plus">+</span><kbd>Shift</kbd><span class="key-plus">+</span><kbd>B</kbd></div>
         </div>
       </div>
@@ -141,14 +141,12 @@
   </div><!-- /steps-tablet -->
 
 
-  <!-- ======================= PASSOS MOBILE (< 600px) — FIREFOX ========================================= -->
+  <!-- ======================= PASSOS MOBILE (< 600px) — FIREFOX ======================= -->
   <div class="steps-mobile">
 
-    <!-- PASSO 2 — Baixar o Firefox -->
     <div class="step-card">
       <span class="step-badge">PASSO 2</span>
       <div class="firefox-badge">
-        <!-- Ícone SVG do Firefox -->
         <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="16" cy="16" r="15" fill="#FF6611"/>
           <ellipse cx="16" cy="16" rx="8" ry="8" fill="#FFD700"/>
@@ -161,9 +159,7 @@
       <p class="step-instruction">
         Este tutorial funciona com o <strong>Firefox</strong>. Ele é um navegador gratuito e seguro! Se você já tem ele no celular, pule esse passo.
       </p>
-
       <a href="https://www.mozilla.org/pt-BR/firefox/browsers/mobile/android/" target="_blank" class="fox-download-btn">
-        <!-- Ícone Firefox SVG completo -->
         <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <radialGradient id="fxa" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#FFE85A"/>
@@ -179,14 +175,11 @@
         </svg>
         Baixar o Firefox grátis
       </a>
-
       <p class="already-have">
         Já tem o Firefox? <a onclick="document.querySelector('.steps-mobile .step-card:nth-child(2)').scrollIntoView({behavior:'smooth'})">Pule para o Passo 3 ↓</a>
       </p>
-
     </div>
 
-    <!-- PASSO 3 — Salvar qualquer página nos favoritos -->
     <div class="step-card">
       <span class="step-badge">PASSO 3</span>
       <div class="firefox-badge">
@@ -195,104 +188,62 @@
       </div>
       <h2 class="step-title">Adicionar Favorito ⭐</h2>
       <p class="step-instruction">
-        Agora vamos adicionar o redação paraná aos <strong>FAVORITOS</strong> 
+        Agora vamos adicionar o redação paraná aos <strong>FAVORITOS</strong>
       </p>
-
       <div class="big-step">
         <span class="big-step-num">1</span>
         <div>Usando o <strong>FireFox</strong>, entre no <strong>REDAÇÃO PARANÁ</strong> e depois entre em <strong>propostas</strong>.</div>
       </div>
       <div class="big-step">
         <span class="big-step-num">2</span>
-        <div>Clique nos <strong>3 PONTINHOS  <strong style="font-size:1.1rem; letter-spacing:2px;">⋮</strong></strong> e depois em <strong>"Adicionar aos favoritos"</strong>.</div>
+        <div>Clique nos <strong>3 PONTINHOS <strong style="font-size:1.1rem; letter-spacing:2px;">⋮</strong></strong> e depois em <strong>"Adicionar aos favoritos"</strong>.</div>
       </div>
       <div class="big-step">
         <span class="big-step-num">3</span>
         <div>Uma mensagem vai aparecer dizendo que a página foi salva. <strong>Ótimo!</strong></div>
       </div>
-
       <div class="kid-tip">
         🦊 <strong>Atenção:</strong> Não feche o Firefox
       </div>
     </div>
 
-    <!-- PASSO 4 — Editar o favorito com o código -->
     <div class="step-card">
       <span class="step-badge">PASSO 4</span>
       <div class="firefox-badge">
         <svg width="14" height="14" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="#FF6611"/><circle cx="32" cy="32" r="14" fill="#FFD700"/></svg>
         Firefox no celular
       </div>
-      <h2 class="step-title">Editar o favorito✏️</h2>
+      <h2 class="step-title">Editar o favorito ✏️</h2>
       <p class="step-instruction">
         Agora vamos trocar o endereço do favorito pelo <strong>código do script</strong> que você copiou no Passo 1. Siga:
       </p>
-
-      <div class="big-step">
-        <span class="big-step-num">1</span>
-        <div>Toque nos <strong>três pontinhos ⋮</strong> do Firefox novamente.</div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">2</span>
-        <div>Toque em <strong>"Favoritos"</strong> para ver a lista de favoritos.</div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">3</span>
-        <div>Encontre o favorito que você acabou de salvar (Redação Paraná). Toque nos <strong>3 PONTINHOS</strong> ao lado dele.</div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">4</span>
-        <div>Toque em <strong>"Editar"</strong> ✏️</div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">5</span>
-        <div>No campo <strong>Nome (Primeiro Retângulo.)</strong>, apague o que tiver e escreva: <span class="highlight">Redação 1</span></div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">6</span>
-        <div>No campo <strong>URL (Segundo Retângulo)</strong>, <strong>apague tudo</strong> que tem nele e  <strong>cole</strong> o código do Passo 1. <em>(pressione e segure no retângulo → toque em "Colar")</em></div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">7</span>
-        <div>Toque em voltar: <strong>&#8592;</strong> no canto superior esquerdo</div>
-      </div>
-
+      <div class="big-step"><span class="big-step-num">1</span><div>Toque nos <strong>três pontinhos ⋮</strong> do Firefox novamente.</div></div>
+      <div class="big-step"><span class="big-step-num">2</span><div>Toque em <strong>"Favoritos"</strong> para ver a lista de favoritos.</div></div>
+      <div class="big-step"><span class="big-step-num">3</span><div>Encontre o favorito que você acabou de salvar (Redação Paraná). Toque nos <strong>3 PONTINHOS</strong> ao lado dele.</div></div>
+      <div class="big-step"><span class="big-step-num">4</span><div>Toque em <strong>"Editar"</strong> ✏️</div></div>
+      <div class="big-step"><span class="big-step-num">5</span><div>No campo <strong>Nome (Primeiro Retângulo.)</strong>, apague o que tiver e escreva: <span class="highlight">Redação 1</span></div></div>
+      <div class="big-step"><span class="big-step-num">6</span><div>No campo <strong>URL (Segundo Retângulo)</strong>, <strong>apague tudo</strong> que tem nele e <strong>cole</strong> o código do Passo 1. <em>(pressione e segure no retângulo → toque em "Colar")</em></div></div>
+      <div class="big-step"><span class="big-step-num">7</span><div>Toque em voltar: <strong>&#8592;</strong> no canto superior esquerdo</div></div>
       <div class="kid-tip">
         🤔 <strong>Travou em algum passo?</strong> Veja o vídeo no topo do site para resolver.
       </div>
     </div>
 
-    <!-- PASSO 5 — Usar! -->
     <div class="step-card">
       <span class="step-badge">PASSO 5</span>
       <h2 class="step-title">Tá pronto! Agora é só usar! 🚀</h2>
       <p class="step-instruction">
         Toda vez que você quiser usar o <strong class="highlight">Redação 1</strong>, é simples assim:
       </p>
-
-      <div class="big-step">
-        <span class="big-step-num">1</span>
-        <div>Abra o <strong>Firefox</strong> e entre no site da <strong>Redação Paraná</strong>.</div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">2</span>
-        <div><strong>Abra a redação que você quer colar.</strong></div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">3</span>
-        <div>Toque nos <strong>três pontinhos ⋮</strong> → <strong>Favoritos</strong> → toque em <strong class="highlight">Redação 1</strong>.</div>
-      </div>
-      <div class="big-step">
-        <span class="big-step-num">4</span>
-        <div>🎉 <strong>Pronto!</strong> O script vai funcionar automaticamente!</div>
-      </div>
-
+      <div class="big-step"><span class="big-step-num">1</span><div>Abra o <strong>Firefox</strong> e entre no site da <strong>Redação Paraná</strong>.</div></div>
+      <div class="big-step"><span class="big-step-num">2</span><div><strong>Abra a redação que você quer colar.</strong></div></div>
+      <div class="big-step"><span class="big-step-num">3</span><div>Toque nos <strong>três pontinhos ⋮</strong> → <strong>Favoritos</strong> → toque em <strong class="highlight">Redação 1</strong>.</div></div>
+      <div class="big-step"><span class="big-step-num">4</span><div>🎉 <strong>Pronto!</strong> O script vai funcionar automaticamente!</div></div>
       <div class="alert-box">
         ⚠️ <strong>Importante:</strong> O botão <strong>só funciona</strong> quando você já está dentro da página da redação. Se você tocar nele em outro site, nada vai acontecer.
       </div>
-
       <div class="kid-tip">
-        🦊 <strong>Lembre-se:</strong> Sempre use o <strong>Firefox</strong> para isso funcionar!. 
+        🦊 <strong>Lembre-se:</strong> Sempre use o <strong>Firefox</strong> para isso funcionar!
       </div>
     </div>
 
@@ -300,63 +251,53 @@
 
 </div><!-- /container -->
 
-  <script>
-    function getDevice() {
-      const w = window.innerWidth;
-      if (w < 600) return 'mobile';
-      if (w < 1024) return 'tablet';
-      return 'desktop';
+<script>
+  function getDevice() {
+    const w = window.innerWidth;
+    if (w < 600) return 'mobile';
+    if (w < 1024) return 'tablet';
+    return 'desktop';
+  }
+
+  function setupPage() {
+    const device = getDevice();
+    const badge = document.getElementById('deviceBadge');
+    const config = {
+      mobile:  { label: '📱 Tutorial para Celular' },
+      tablet:  { label: '📱 Tutorial para Tablet' },
+      desktop: { label: '🖥️ Tutorial para Computador' }
+    };
+    badge.textContent = config[device].label;
+  }
+
+  function showToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+
+  function copyFunc() {
+    const text = document.getElementById('scriptCode').innerText;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showToast).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
     }
-
-    function setupPage() {
-      const device = getDevice();
-      const video = document.getElementById('tutorialVideo');
-      const badge = document.getElementById('deviceBadge');
-      const caption = document.getElementById('videoCaption');
-      const vc = document.getElementById('videoContainer');
-
-      const config = {
-        mobile:  {label: '📱 Tutorial para Celular',    cap: 'Vídeo com instruções para celular',    ratio: '9/16' },
-        tablet:  {label: '📱 Tutorial para Tablet',     cap: 'Vídeo com instruções para tablet',     ratio: '4/3'  },
-        desktop: {label: '🖥️ Tutorial para Computador', cap: 'Vídeo com instruções para computador', ratio: '16/9' }
-      };
-
-      const c = config[device];
-      badge.textContent = c.label;
-
-      const source = document.createElement('source');
-      source.src = c.src;
-      source.type = 'video/mp4';
+    function fallbackCopy() {
+      const el = document.createElement('textarea');
+      el.value = text;
+      el.style.position = 'fixed';
+      el.style.opacity = '0';
+      document.body.appendChild(el);
+      el.focus();
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast();
     }
+  }
 
-    function showToast() {
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-    }
-
-    function copyFunc() {
-      const text = document.getElementById('scriptCode').innerText;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(showToast).catch(fallbackCopy);
-      } else {
-        fallbackCopy();
-      }
-      function fallbackCopy() {
-        const el = document.createElement('textarea');
-        el.value = text;
-        el.style.position = 'fixed';
-        el.style.opacity = '0';
-        document.body.appendChild(el);
-        el.focus();
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-        showToast();
-      }
-    }
-
-    setupPage();
-  </script>
+  setupPage();
+</script>
 </body>
 </html>

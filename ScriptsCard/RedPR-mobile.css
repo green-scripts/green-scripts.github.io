@@ -1,9 +1,26 @@
 /* ══════════════════════════════════════════════
    RedPR-mobile.css
-   Estilos extras para o tutorial mobile (Firefox / infantil)
+   Estilos extras para o tutorial mobile (Firefox)
 ══════════════════════════════════════════════ */
 
-/* ── Botão de download do Firefox ── */
+/* ── FIREFOX BADGE ── */
+.firefox-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 102, 17, .1);
+  border: 1px solid rgba(255, 102, 17, .28);
+  color: #FF6611;
+  padding: 4px 13px;
+  border-radius: 50px;
+  font-family: 'Space Mono', monospace;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  margin-bottom: .8rem;
+}
+
+/* ── FOX DOWNLOAD BTN ── */
 .fox-download-btn {
   display: flex;
   align-items: center;
@@ -11,60 +28,83 @@
   gap: 12px;
   background: linear-gradient(135deg, #FF6611, #FF9500);
   color: #fff;
+  font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: .95rem;
   padding: 14px 22px;
   border-radius: 14px;
   text-decoration: none;
   margin-top: 1.1rem;
-  box-shadow: 0 4px 20px rgba(255, 102, 17, 0.35);
-  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 20px rgba(255, 102, 17, .3);
+  transition: transform .15s, box-shadow .15s;
   border: none;
   cursor: pointer;
 }
 
-.fox-download-btn:hover  { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255, 102, 17, 0.45); }
+.fox-download-btn:hover  { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255, 102, 17, .45); }
 .fox-download-btn:active { transform: scale(0.97); }
 
-/* ── Caixa de dica infantil (borda tracejada verde) ── */
-.kid-tip {
-  background: rgba(34, 255, 102, 0.07);
-  border: 1.5px dashed rgba(34, 255, 102, 0.4);
-  border-radius: 14px;
-  padding: 12px 15px;
-  font-size: 0.88rem;
-  color: rgba(180, 220, 180, 0.9);
-  margin-top: 1rem;
-  line-height: 1.65;
+/* ── ALREADY HAVE ── */
+.already-have {
+  text-align: center;
+  margin-top: .9rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .72rem;
+  color: rgba(165, 255, 112, .35);
 }
 
-.kid-tip strong { color: #22ff66; }
+.already-have a {
+  color: rgba(34, 255, 85, .65);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color .2s;
+}
 
-/* ── Item de passo grande (card numerado) ── */
+.already-have a:hover { color: #71ff55; }
+
+/* ── KID TIP ── */
+.kid-tip {
+  background: rgba(34, 255, 85, .05);
+  border: 1.5px dashed rgba(34, 255, 85, .28);
+  border-radius: 14px;
+  padding: 12px 15px;
+  font-family: 'Space Mono', monospace;
+  font-size: .78rem;
+  color: rgba(165, 255, 112, .65);
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+.kid-tip strong { color: #71ff55; }
+
+/* ── BIG STEP ── */
 .big-step {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: .9rem;
+  background: rgba(34, 255, 85, .03);
+  border: 1px solid rgba(34, 255, 85, .1);
   border-radius: 14px;
   padding: 14px;
-  font-size: 0.92rem;
-  color: rgba(180, 200, 180, 0.85);
-  line-height: 1.7;
+  font-family: 'Space Mono', monospace;
+  font-size: .8rem;
+  color: rgba(165, 255, 112, .55);
+  line-height: 1.75;
 }
 
-.big-step strong { color: #fff; }
+.big-step strong { color: rgba(165, 255, 112, .9); }
+.big-step em { color: rgba(165, 255, 112, .4); font-style: italic; }
 
-/* ── Número do passo grande (círculo verde) ── */
+/* ── BIG STEP NUM ── */
 .big-step-num {
-  background: linear-gradient(135deg, #22ff66, #00cc44);
-  color: #000;
-  font-weight: 800;
-  font-size: 1rem;
-  width: 34px;
-  height: 34px;
+  background: #71ff55;
+  color: #030803;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: .85rem;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -73,37 +113,28 @@
   margin-top: 1px;
 }
 
-/* ── Títulos dos step-cards no mobile (levemente maiores) ── */
+/* ── MOBILE STEP TITLE ── */
 .steps-mobile .step-card .step-title {
-  font-size: clamp(1.05rem, 4.5vw, 1.3rem);
+  font-size: clamp(1.05rem, 4.5vw, 1.25rem);
 }
 
-/* ── Badge laranja do Firefox ── */
-.firefox-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 102, 17, 0.12);
-  border: 1px solid rgba(255, 102, 17, 0.3);
-  color: #FF6611;
-  padding: 4px 13px;
-  border-radius: 50px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.04em;
-}
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 599px) {
+  .container { padding: 4rem .9rem 3rem; }
 
-/* ── Texto "Já tem o Firefox?" ── */
-.already-have {
-  text-align: center;
-  margin-top: 0.9rem;
-  font-size: 0.82rem;
-  color: rgba(160, 180, 160, 0.6);
-}
+  .step-card { padding: 1.2rem; border-radius: 12px; }
 
-.already-have a {
-  color: rgba(34, 255, 102, 0.7);
-  text-decoration: underline;
-  cursor: pointer;
+  .copy-area {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .btn-copy {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    font-size: .78rem;
+  }
 }
