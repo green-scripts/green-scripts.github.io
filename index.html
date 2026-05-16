@@ -46,13 +46,87 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="Imagens/SiteIcon.png" type="image/x-icon">
+  <link rel="stylesheet" href="PixGG.css">
+  <link rel="shortcut icon" href="Imagens/GreenScriptsLogo.png" type="image/x-icon">
   <meta name="clckd" content="d560363d033b8a9732fbc6e161ab9960" />
 </head>
 <body>
 
-  <div class="wrap">
+  <div id="PixGgScreen">
 
+  <!-- Botão fechar -->
+  <button id="CloseButton" onclick="closePix()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <div id="PixTitle">
+    <img src="Imagens/GreenScriptsLogo.png" alt="Logo">
+    <span class="TextGradient"><strong>GreenScripts HUB</strong></span>
+  </div>
+
+  <hr>
+
+  <div id="welcome">
+    <h1>Bem-Vindo</h1>
+    <h2>Obrigado por escolher nossos <strong>scripts</strong></h2>
+  </div>
+
+  <div id="PixGoalCard">
+
+    <div id="GoalTitle">
+      <h2>❤️ Apoie</h2>
+      <span class="TextGradient"><strong>GreenScripts HUB</strong></span>
+    </div>
+
+    <div id="GoalDescription">
+      <p>
+        Apoie os desenvolvedores fazendo uma doação via
+        <strong id="pixText">
+          <img src="https://www.advocacianunes.com.br/wp-content/uploads/2022/04/logo-pix-icone-1024.png"
+               alt="Pix" width="14" height="14">
+          PIX
+        </strong>
+        a partir de R$&nbsp;1,00!
+      </p>
+    </div>
+
+    <div id="GoalContainer">
+      <div id="GoalbarWrapper">
+        <div id="GoalbarTrack">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="GoalLabels">
+          <span id="GoalCurrent">R$ NaN</span>
+          <span id="GoalPercent">NaN%</span>
+          <span id="GoalTotal">R$ NaN</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="DonateButtonWrapper">
+      <a target="_blank" href="https://pixgg.com/GreenScriptsHUB">
+        <button id="DonateButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                     2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                     C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5
+                     c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          Fazer Doação
+        </button>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <div class="wrap">
     <!-- LOGO -->
     <header class="logo-block">
       <div class="logo"><span class="g">Green</span>Scripts <span class="hub">HUB</span></div>
@@ -160,5 +234,63 @@
     <!-- FOOTER -->
     <footer class="foot">© 2026 GreenScripts HUB · Feito para estudantes do Paraná</footer>
   </div>
+
+  <script>
+    const overlay = document.createElement("div");
+    overlay.id = "blur-overlay";
+
+    Object.assign(overlay.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "rgba(0, 0, 0, 0.4)",
+        backdropFilter: "blur(8px)",
+        webkitBackdropFilter: "blur(8px)",
+        zIndex: "12920"
+    });
+
+    document.body.appendChild(overlay);
+
+    function closePix()
+    {
+      const card = document.getElementById('PixGgScreen');
+      card.style.display = 'none'
+      document.getElementById("blur-overlay")?.remove();
+    }
+  </script>
+
+  <script>
+
+    const GoalCurrentDiv = document.getElementById("GoalCurrent")
+    const GoalTotalDiv = document.getElementById('GoalTotal')
+    const GoalPercentDiv = document.getElementById('GoalPercent')
+
+    const GoalProgressBar = document.getElementById('progress-fill')
+
+
+    getGoal()
+
+    async function getGoal()
+    {
+      const response = await fetch('https://events.pixgg.com.br/Goals/RenderGoal?apiKey=4753fdbe-2d31-459c-b926-662c551e301f&goalId=30742',{
+        method: 'GET',
+        headers: {'Content-Type': 'application.json'}
+      })
+
+      if (response.ok)
+      {
+        const data = await response.json()
+        currentAmount = Number(data.currentAmount.toFixed(2))
+        goalAmount = Number(data.goalAmount.toFixed(2))
+
+        GoalCurrentDiv.textContent = `R$: ${currentAmount}`
+        GoalTotalDiv.textContent = `R$: ${goalAmount}`
+        GoalPercentDiv.textContent = `${Number((currentAmount / goalAmount * 100).toFixed(1))}%`
+        GoalProgressBar.style.width = `${Number((currentAmount / goalAmount * 100).toFixed(1))}%`
+      }
+    }
+  </script>
 </body>
 </html>

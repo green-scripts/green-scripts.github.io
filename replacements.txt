@@ -1,0 +1,6 @@
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0ZGJyYWljb3Rua2hma2V4d3loIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1MDY2MjcsImV4cCI6MjA5MzA4MjYyN30.ftV4X0vN3NRHJhsIyI_z4D0rm8sGPxVtwzhOux1jykA==>REMOVED_KEY
+https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/ReturnGenerateKeys==>REMOVED_ENDPOINT_1
+https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/GetScript==>REMOVED_ENDPOINT_2
+https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/GenerateKeySystem==>REMOVED_ENDPOINT_3
+https://btdbraicotnkhfkexwyh.supabase.co/functions/v1/ReturnTime==>REMOVED_ENDPOINT_4
+btdbraicotnkhfkexwyh.supabase.co/storage/v1/object/public/GetKeyScreen/GetKeyScreen(RedPr)(o).js==>REMOVED_RAW1
