@@ -24,24 +24,24 @@
 
 ## 📖 Sobre o Projeto
 
-**GreenScripts HUB** é um projeto independente que oferece scripts e automações **100% gratuitos** para estudantes do Paraná. Nosso objetivo é contornar restrições desnecessárias e automatizar tarefas repetitivas nas plataformas educacionais estaduais — sem cadastro, sem custo oculto, sem enrolação.
+**GreenScripts HUB** é um projeto independente que oferece scripts e automações **100% gratuitos** para estudantes do Paraná. Nosso objetivo é contornar restrições desnecessárias e automatizar tarefas repetitivas nas plataformas educacionais estaduais.
 
 ```
-✅ Gratuito    ✅ Sem cadastro obrigatório    ✅ Atualizado regularmente
+✅ Gratuito    ✅ Sem cadastro    ✅ Atualizado regularmente
 ```
 
 ---
 
 ## 🔑 Sistema de Chaves
 
-Alguns scripts exigem uma **chave de acesso** para funcionar. A chave é gerada gratuitamente pelo nosso sistema de monetização via **[LootLabs](https://lootlabs.gg/)** — basta completar uma tarefa rápida e a chave é liberada na hora.
+Nossos scripts exigem uma **chave de acesso** para funcionar. A chave é gerada gratuitamente pelo nosso sistema de geração de chaves **[getKey](https://green-scripts.github.io/getKey.html)** — basta completar uma tarefa rápida e a chave é liberada na hora.
 
 > 💡 A monetização por chaves é o que mantém o projeto ativo e os scripts atualizados!
 
 ### Como pegar sua chave:
 
 1. Acesse **[green-scripts.github.io/getKey.html](https://green-scripts.github.io/getKey.html)**
-2. Complete a verificação do **LootLabs**
+2. Complete a tarefa do **LootLabs**
 3. Copie a chave gerada e use no script
 
 ---
@@ -122,6 +122,8 @@ O processo é idêntico ao desktop ou celular, dependendo do navegador:
 
 </details>
 
+Veja mais em: [green-scripts.github.io/ScriptCard/RedPR](https://green-scripts.github.io/ScriptsCard/RedPR.html)
+
 ---
 
 ## 📊 Estatísticas do Projeto
@@ -155,18 +157,6 @@ GreenScripts-HUB/
 > Este repositório é destinado **exclusivamente para fins educacionais e de aprendizado**.  
 > O uso dos scripts é de **total responsabilidade do usuário**.  
 > Os desenvolvedores não se responsabilizam por eventuais consequências do uso indevido.
-
----
-
-## 🤝 Contribuindo
-
-Encontrou um bug? Quer adicionar suporte a uma nova plataforma? Contribuições são muito bem-vindas! 🎉
-
-1. **Fork** o projeto
-2. Crie uma **branch**: `git checkout -b feat/nova-plataforma`
-3. **Commit** suas alterações: `git commit -m 'feat: adiciona script para X'`
-4. **Push**: `git push origin feat/nova-plataforma`
-5. Abra um **Pull Request**
 
 ---
 
